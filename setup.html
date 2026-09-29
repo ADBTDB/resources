@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a2138">
+  <meta name="description" content="How to install and use the Matter Workspace skill from Arlo Devlin-Brown's Synergy 2026 session.">
+  <title>Set up Matter Workspace | Synergy 2026 Resources</title>
+  <style>
+    :root { color-scheme:light; --navy:#0a2138; --ink:#172a3b; --muted:#596a77; --orange:#ef6a2e; --line:#dce3e7; --paper:#f7f9fa; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--paper); line-height:1.6; }
+    header { background:var(--navy); color:#fff; padding:22px max(24px,calc((100vw - 760px)/2)); }
+    header a { color:#fff; text-decoration:none; font-weight:700; }
+    main { max-width:760px; margin:auto; padding:54px 24px 80px; }
+    h1,h2 { font-family:Georgia,Cambria,serif; color:var(--navy); line-height:1.15; }
+    h1 { font-size:clamp(2.3rem,6vw,3.7rem); margin:0 0 18px; }
+    h2 { font-size:1.55rem; margin:40px 0 12px; }
+    p,li { max-width:70ch; }
+    li { margin:8px 0; }
+    a { color:#135c88; }
+    a:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
+    code { background:#e8edf0; padding:2px 5px; border-radius:3px; overflow-wrap:anywhere; }
+    .lead { font-size:1.14rem; color:#384f60; }
+    .box { background:#fff; border:1px solid var(--line); border-left:5px solid var(--orange); padding:20px 24px; margin:30px 0; }
+    .download { display:inline-block; background:var(--navy); color:#fff; text-decoration:none; font-weight:700; padding:12px 18px; border-radius:5px; }
+    .small { color:var(--muted); font-size:.93rem; }
+  </style>
+</head>
+<body>
+  <header><a href="index.html">← Synergy 2026 resources</a></header>
+  <main>
+    <h1>Set up Matter Workspace</h1>
+    <p class="lead">Download the skill, add it to an assistant that can work with files, and start in the shared folder for a legal matter.</p>
+    <p><a class="download" href="https://github.com/ADBTDB/resources/releases/download/matter-workspace-v1.5.1/matter-workspace-v1.5.1.zip">Download version 1.5.1 ZIP</a></p>
+    <div class="box"><strong>Before using it with a matter:</strong> Review the ZIP and confirm that your firm permits the assistant and the selected folder or connector to handle that matter’s information. The skill will ask for context and approval before changing an existing workspace.</div>
+
+    <h2>Claude</h2>
+    <ol>
+      <li>In Claude, open <strong>Customize → Skills</strong>. Enable code execution and skills if your account or organization requires it.</li>
+      <li>Choose <strong>+ → Create skill → Upload a skill</strong>, then select the ZIP. Turn on Matter Workspace in your skills list.</li>
+      <li>Open the legal matter folder in a file-capable Claude session and ask: “Use Matter Workspace to set up this matter folder.”</li>
+    </ol>
+    <p class="small">Your organization may control whether custom skills or file access are available. <a href="https://support.claude.com/en/articles/12512180-use-skills-in-claude">Claude skill instructions</a>.</p>
+
+    <h2>Codex</h2>
+    <ol>
+      <li>Unzip the download. Confirm that it contains one <code>matter-workspace</code> folder with <code>SKILL.md</code>, <code>templates</code>, and <code>references</code>.</li>
+      <li>Place that folder in your user skills directory: <code>~/.agents/skills/matter-workspace/</code>. If you use a repository-specific setup, place it in that repository’s <code>.agents/skills/</code> directory instead.</li>
+      <li>Open the legal matter folder as your Codex working directory and ask: “Use $matter-workspace to set up this matter folder.” If the skill does not appear, restart Codex.</li>
+    </ol>
+    <p class="small"><a href="https://learn.chatgpt.com/docs/build-skills">OpenAI skill instructions</a>. Local standalone skills are supported in the ChatGPT desktop app, Codex CLI, and IDE extension; other ChatGPT surfaces have different distribution options.</p>
+
+    <h2>What to expect</h2>
+    <p>The skill first checks the folder and any existing team setup. For a new matter, it asks a short set of setup questions. For an older workspace, it shows a proposed change plan before moving or replacing files. After setup, start a fresh session from the matter folder so its instructions load.</p>
+    <p>It organizes a shared workspace; it does not learn the case record for you. Keep human review over matter facts, confidentiality, and any external communication. The skill is available under the <a href="LICENSE">MIT License</a>.</p>
+  </main>
+</body>
+</html>
