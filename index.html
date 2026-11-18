@@ -11,6 +11,14 @@
     * { box-sizing:border-box; }
     body { margin:0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--ink); background:var(--paper); line-height:1.55; }
     header { background:var(--navy); color:#fff; padding:22px max(24px, calc((100vw - 1000px)/2)); }
+    header { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px 32px; }
+    .who .name { font-size:1.05rem; font-weight:700; letter-spacing:.02em; }
+    .who .firm { color:#d7e2ea; font-size:.92rem; margin-top:2px; }
+    .who .firm a { color:#d7e2ea; text-decoration:none; }
+    .links { display:flex; flex-wrap:wrap; gap:10px; }
+    .links a { color:#fff; text-decoration:none; font-size:.86rem; font-weight:700; border:1px solid rgba(255,255,255,.35); border-radius:4px; padding:7px 12px; }
+    .links a:hover, .who .firm a:hover { border-color:#fff; text-decoration:underline; }
+    .links a:focus-visible, .who a:focus-visible { outline:3px solid var(--orange); outline-offset:3px; }
     .brand { font-size:.84rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
     .event { color:#b9cad6; font-size:.84rem; margin-top:4px; }
     main { max-width:1000px; margin:auto; padding:68px 24px 80px; }
@@ -26,34 +34,32 @@
     .guide { color:var(--navy); font-weight:700; }
     .note { color:var(--muted); font-size:.94rem; margin-top:22px; }
     footer { border-top:1px solid var(--line); max-width:1000px; margin:auto; padding:24px; color:var(--muted); font-size:.88rem; }
-    .contact h2 { font-size:1.35rem; }
-    .contact ul { list-style:none; padding:0; margin:0; }
-    .contact li { margin:0 0 6px; }
-    .contact a { color:var(--navy); font-weight:700; }
     @media (max-width:600px) { main { padding-top:44px; } .card { padding:24px; } }
   </style>
 </head>
 <body>
-  <header><div class="brand">Arlo Devlin-Brown</div><div class="event">Synergy 2026 · Session resources</div></header>
+  <header>
+    <div class="who">
+      <div class="name">Arlo Devlin-Brown</div>
+      <div class="firm"><a href="https://tdblaw.com/">Treanor Devlin Brown PLLC · TDB Law</a></div>
+      <div class="event">Synergy 2026 · Session resources</div>
+    </div>
+    <nav class="links" aria-label="Contact">
+      <a href="https://www.linkedin.com/in/arlodb">LinkedIn</a>
+      <a href="https://tdblaw.com/our-team/arlo-devlin-brown/">TDB Law bio</a>
+    </nav>
+  </header>
   <main>
     <p class="eyebrow">Resources from the presentation</p>
     <h1>Make the matter the starting point.</h1>
     <p class="intro">Matter Workspace helps an AI assistant get oriented in a shared legal matter folder, keep working files organized, and pick up where a prior session left off.</p>
     <section class="card" aria-labelledby="resource-title">
-      <span class="status">Version 1.5.1</span>
+      <span class="status">Version 1.7.0</span>
       <h2 id="resource-title">Matter Workspace</h2>
       <p>The onboarding workflow shown in the talk. It can start a new matter workspace, help a teammate join one, or assess an older setup before making changes.</p>
-      <a class="action" href="https://github.com/ADBTDB/resources/releases/download/matter-workspace-v1.5.1/matter-workspace-v1.5.1.zip">Download Matter Workspace ZIP</a>
+      <a class="action" href="https://github.com/ADBTDB/resources/releases/download/matter-workspace-v1.7.0/matter-workspace-v1.7.0.zip">Download Matter Workspace ZIP</a>
       <a class="guide" href="setup.html">Read the setup guide</a>
       <p class="note">The skill is available under the <a href="LICENSE">MIT License</a>. Review the files and your organization’s rules before using it with a real matter. It organizes a workspace; it does not assess the case or replace professional judgment.</p>
-    </section>
-    <section class="card contact" aria-labelledby="contact-title" style="margin-top:28px">
-      <h2 id="contact-title">Get in touch</h2>
-      <ul>
-        <li><a href="https://tdblaw.com/our-team/arlo-devlin-brown/">Arlo Devlin-Brown</a></li>
-        <li><a href="https://tdblaw.com/">Treanor Devlin Brown PLLC (TDB Law)</a></li>
-        <li><a href="https://www.linkedin.com/in/arlodb">LinkedIn: linkedin.com/in/arlodb</a></li>
-      </ul>
     </section>
     <section class="card" aria-labelledby="fordham-title" style="margin-top:28px">
       <span class="status">Fordham Law · Nov. 3, 2026</span>
